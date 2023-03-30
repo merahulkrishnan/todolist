@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="padding-left: 130px;">
+    <br><br><br>
+    <h1>Welcome to the Todo App!</h1>
+    <p>This app helps you keep track of your tasks and stay organized.</p>
+    <p>With the Todo App, you can:</p>
+    <ul>
+        <li>Create new tasks</li>
+        <li>Edit existing tasks</li>
+        <li>Delete tasks you no longer need</li>
+    </ul>
+    <p>Get started by logging in or registering:</p>
+    <br>
+    <div>
+        <a class="btn btn-success" href="{% url 'login' %}">Login</a>
+        <a class="btn btn-success" href="{% url 'register' %}">Register</a>
+    </div>
+</div>
+{% endblock %}
