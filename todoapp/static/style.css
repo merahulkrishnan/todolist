@@ -13,11 +13,9 @@
 .navbar {
       background-color: springgreen;
       color: #ffffff;
-      height: 120px;
       position: static;
-      padding-bottom: 70px;
-      font-size: 24px; /* Adjust the value as needed */
-      padding-top: 20px; /* Adjust the value as needed */
+      padding-bottom: 20px;
+      font-size: 24px;
 }
 .navbar-brand {
       font-weight: bold;
