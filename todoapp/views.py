@@ -46,7 +46,7 @@ def newhome(request):
     return render(request, "newhome.html")
 
 
-def demo(request):
+def add(request):
     # Filter out old tasks and user-specific tasks
     task1 = Task.objects.filter(date__gte=datetime.now().date(), user=request.user)
 
@@ -70,7 +70,7 @@ def delete(request, taskid):
     task = Task.objects.get(id=taskid)
     if request.method == 'POST':
         task.delete()
-        return redirect('demo')
+        return redirect('add')
     return render(request, 'delete.html')
 
 
@@ -79,7 +79,7 @@ def update(request, id):
     f = TodoForm(request.POST or None, instance=task)
     if f.is_valid():
         f.save()
-        return redirect('demo')
+        return redirect('add')
     return render(request, 'edit.html', {'f': f, 'task': task})
 
 
@@ -113,7 +113,7 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('demo')
+            return redirect('add')
         else:
             messages.info(request, "Invalid Credentials")
             return redirect('login')
